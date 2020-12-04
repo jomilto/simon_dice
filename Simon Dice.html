@@ -130,7 +130,7 @@
 
         toggleBtnEmpezar() {
           if (btnEmpezar.classList.contains('hide')) {
-            btnEmpezar.classList.add('remove')
+            btnEmpezar.classList.remove('hide')
           }else {
             btnEmpezar.classList.add('hide')
           }
@@ -218,6 +218,7 @@
               }
             }
           } else {
+            this.eliminarEventosClick()
             this.perdioElJuego()
           }
         }
@@ -232,7 +233,6 @@
         perdioElJuego() {
           swal('Perdiste', 'Prueba de nuevo', 'error')
           .then(()=>{
-            this.eliminarEventosClick()
             this.inicializar()
           })
         }
